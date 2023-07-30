@@ -5,7 +5,7 @@ const Product = (allProducts) => {
     return (
         <div>
             <h1 className="text-5xl font-bold text-center my-10">
-                All products
+                Featured products
             </h1>
             <div className="grid lg:grid-cols-2 gap-4 ">
                 {products?.slice(0, 6).map((product) => (
@@ -51,7 +51,7 @@ const Product = (allProducts) => {
                                 </svg>
                                 {product?.aRating}
                             </p>
-                            <div className="card-actions justify-end items-center">
+                            <div className="card-actions justify-end">
                                 <button className="btn btn-primary">
                                     Details
                                 </button>
@@ -59,6 +59,10 @@ const Product = (allProducts) => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="flex justify-center p-5">
+                <button className="btn btn-primary">All Products</button>
             </div>
         </div>
     );

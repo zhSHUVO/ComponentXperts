@@ -3,8 +3,8 @@ import Image from "next/image";
 const Banner = () => {
     return (
         <div>
-            <div className="hero bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
+            <div className="hero bg-base-200 rounded-2xl">
+                <div className="hero-content flex-col lg:flex-row ">
                     <Image
                         src="https://i.ibb.co/qjcFYht/daniel-lezuch-I4-Dc-RJ-Evd8-unsplash.jpg"
                         priority={true}
