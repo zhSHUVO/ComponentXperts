@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /* eslint-disable @next/next/no-img-element */
 const Product = ({ product }) => {
     return (
@@ -38,7 +40,12 @@ const Product = ({ product }) => {
                     {product?.aRating}
                 </p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Details</button>
+                    <Link
+                        href={`/products/${product?._id}`}
+                        className="btn btn-primary"
+                    >
+                        Details
+                    </Link>
                 </div>
             </div>
         </div>
