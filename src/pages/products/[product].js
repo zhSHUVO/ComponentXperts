@@ -94,7 +94,9 @@ ProductDetail.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch(
+        "https://componentxperts-server.onrender.com/api/products"
+    );
     const products = await res.json();
 
     const paths = products?.map((product) => ({
@@ -108,7 +110,7 @@ export const getStaticProps = async (context) => {
     const { params } = context;
 
     const res = await fetch(
-        `http://localhost:5000/api/products/${params.product}`
+        `https://componentxperts-server.onrender.com/api/products/${params.product}`
     );
     const data = await res.json();
 

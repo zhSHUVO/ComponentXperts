@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import RootLayout from "@/components/Layouts/RootLayout";
+import { useBuilder } from "@/utils/BuilderContext";
 import { useRouter } from "next/router";
 
 const ComponentChoose = ({ product }) => {
     const router = useRouter();
     const category = router.query.choose;
+
+    const { state, dispatch } = useBuilder();
+
+    const handleAddToBuilder = (product) => {
+        dispatch({ type: "ADD_COMPONENT", payload: { category, product } });
+        router.push("/pc-builder");
+    };
 
     return (
         <div>
@@ -15,7 +23,7 @@ const ComponentChoose = ({ product }) => {
                 {product?.map((product) => (
                     <div
                         key={product?._id}
-                        className="grid grid-cols-[25%_60%_15%] items-center bg-base-100 shadow-xl rounded-2xl m-4 p-2"
+                        className="grid lg:grid-cols-[25%_60%_15%]  items-center bg-base-100 shadow-xl rounded-2xl m-4 p-2"
                     >
                         <div className="flex justify-center">
                             <img
@@ -61,7 +69,10 @@ const ComponentChoose = ({ product }) => {
                             </div>
                         </div>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary">
+                            <button
+                                onClick={() => handleAddToBuilder(product)}
+                                className="btn btn-primary"
+                            >
                                 Add to Build
                             </button>
                         </div>
@@ -79,7 +90,9 @@ ComponentChoose.getLayout = function (page) {
 };
 
 export const getStaticPaths = async () => {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch(
+        "https://componentxperts-server.onrender.com/api/products"
+    );
     const products = await res.json();
 
     const paths = products?.map((product) => ({
@@ -92,11 +105,11 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const { params } = context;
 
-    console.log(params);
-
     const category = encodeURIComponent(params.choose);
 
-    const res = await fetch(`http://localhost:5000/api/categories/${category}`);
+    const res = await fetch(
+        `https://componentxperts-server.onrender.com/api/categories/${category}`
+    );
     const data = await res.json();
 
     return {

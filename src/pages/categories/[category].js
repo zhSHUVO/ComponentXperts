@@ -27,7 +27,9 @@ Category.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch(
+        "https://componentxperts-server.onrender.com/api/products"
+    );
     const products = await res.json();
 
     const paths = products?.map((product) => ({
@@ -42,7 +44,9 @@ export const getStaticProps = async (context) => {
 
     const category = encodeURIComponent(params.category);
 
-    const res = await fetch(`http://localhost:5000/api/categories/${category}`);
+    const res = await fetch(
+        `https://componentxperts-server.onrender.com/api/categories/${category}`
+    );
     const data = await res.json();
 
     return {

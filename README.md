@@ -1,38 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Sure! Below is a sample README.md file for your PC Builder project:
+
+# ComponentXperts
+
+ComponentXperts is a web application that allows users to build their dream PC by selecting components from various categories like CPU, Motherboard, RAM, Power Supply Unit, Storage Device, and Monitor.
+
+## Features
+
+-   Choose from a variety of components in different categories.
+-   View detailed information about each component, including name, image, category, price, stock status, and rating.
+-   Add selected components to the PC Builder page for later reference.
+-   Check the overall build status and ensure at least 5 components have been selected before completing the build.
+-   Complete the build and post it to the database.
+-   View the saved PC builds in the database.
+
+## Technologies Used
+
+-   [Next.js](https://nextjs.org/) - A React framework for server-rendered applications.
+-   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+-   [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+-   [MongoDB](https://www.mongodb.com/) - A NoSQL database for storing PC builds.
+-   [Redux Toolkit](https://redux-toolkit.js.org/) - A package to simplify and manage the application state.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+    ```bash
+    git clone https://github.com/zhSHUVO/ComponentXperts.git
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    ```bash
+    cd ComponentXperts
+    npm install
+    ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Run the development server:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+    ```bash
+    npm run dev
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+-   `/api/products` - Fetch all products from the MongoDB product collection.
+-   `/api/products/:productId` - Fetch a specific product by ID from the MongoDB product collection.
+-   `/api/categories` - Fetch all categories from the MongoDB category collection.
+-   `/api/categories/:category` - Fetch products filtered by category from the MongoDB product collection.
+-   `/api/pc-builder` - Save the PC build to the MongoDB pc-builds collection.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Folder Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   `pages/` - Contains Next.js pages.
+-   `components/` - Reusable React components.
+-   `utils/` - Utility functions and custom hooks.
+-   `public/` - Static assets like images.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! If you find a bug or have an idea for a new feature, please create an issue or submit a pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Please note that this is a sample README file, and you can modify it to include more specific information about your project as needed. Additionally, make sure to update the URLs and other details to match your actual project repository and technology choices.

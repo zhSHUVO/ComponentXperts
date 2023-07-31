@@ -30,7 +30,30 @@ const NavBar = () => {
                                 <a>Catagory</a>
                                 <ul className="p-2">
                                     <li>
-                                        <a>Submenu 1</a>
+                                        <Link href={"/categories/CPU"}>
+                                            CPU
+                                        </Link>
+                                        <Link href={"/categories/Motherboard"}>
+                                            Motherboard
+                                        </Link>
+                                        <Link href={"/categories/RAM"}>
+                                            RAM
+                                        </Link>
+                                        <Link
+                                            href={"/categories/Storage Device"}
+                                        >
+                                            Storage
+                                        </Link>
+                                        <Link href={"/categories/Monitor"}>
+                                            Monitor
+                                        </Link>
+                                        <Link
+                                            href={
+                                                "/categories/Power Supply Unit"
+                                            }
+                                        >
+                                            PSU
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>
@@ -39,18 +62,44 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">
+                    <Link
+                        href={"/"}
+                        className="btn btn-ghost normal-case text-xl"
+                    >
                         ComponentXperts
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 z-[1]">
                         <li tabIndex={0}>
                             <details>
                                 <summary>Catagory</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <a>Submenu 1</a>
+                                        <Link href={"/categories/CPU"}>
+                                            CPU
+                                        </Link>
+                                        <Link href={"/categories/Motherboard"}>
+                                            Motherboard
+                                        </Link>
+                                        <Link href={"/categories/RAM"}>
+                                            RAM
+                                        </Link>
+                                        <Link
+                                            href={"/categories/Storage Device"}
+                                        >
+                                            Storage
+                                        </Link>
+                                        <Link href={"/categories/Monitor"}>
+                                            Monitor
+                                        </Link>
+                                        <Link
+                                            href={
+                                                "/categories/Power Supply Unit"
+                                            }
+                                        >
+                                            PSU
+                                        </Link>
                                     </li>
                                 </ul>
                             </details>

@@ -29,10 +29,14 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-    const productRes = await fetch("http://localhost:5000/api/products");
+    const productRes = await fetch(
+        "https://componentxperts-server.onrender.com/api/products"
+    );
     const productData = await productRes.json();
 
-    const categoriesRes = await fetch("http://localhost:5000/api/categories");
+    const categoriesRes = await fetch(
+        "https://componentxperts-server.onrender.com/api/categories"
+    );
     const categoriesData = await categoriesRes.json();
 
     return {
