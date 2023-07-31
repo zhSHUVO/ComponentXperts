@@ -7,7 +7,16 @@ const HomePage = ({ allProducts, allCategories }) => {
     return (
         <div>
             <Banner />
-            <Product products={allProducts} />
+            <>
+                <h1 className="text-5xl font-bold text-center my-10">
+                    Featured products
+                </h1>
+                <div className="grid lg:grid-cols-2 gap-4 ">
+                    {allProducts?.slice(0, 6).map((product) => (
+                        <Product product={product} key={product._id} />
+                    ))}
+                </div>
+            </>
             <Catagory categories={allCategories} />
         </div>
     );
