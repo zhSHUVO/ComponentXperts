@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const NavBar = () => {
     return (
         <div>
@@ -33,7 +35,7 @@ const NavBar = () => {
                                 </ul>
                             </li>
                             <li>
-                                <a>PC Builder</a>
+                                <Link href={"/pc-builder"}>PC Builder</Link>
                             </li>
                         </ul>
                     </div>
@@ -54,7 +56,7 @@ const NavBar = () => {
                             </details>
                         </li>
                         <li>
-                            <a>Pc Builder</a>
+                            <Link href={"/pc-builder"}>Pc Builder</Link>
                         </li>
                     </ul>
                 </div>
